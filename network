@@ -1,0 +1,67 @@
+config switch
+ option name 'switch0'
+ option reset '1'
+ option enable_vlan '1'
+ option enable_learning '0'
+
+config switch_vlan
+ option device 'switch0'
+ option vlan '1'
+ option ports '0t 1'
+ option vid '1'
+
+config switch_vlan
+ option device 'switch0'
+ option vlan '3'
+ option ports '0t 4'
+ option vid '3'
+
+config switch_vlan
+ option device 'switch0'
+ option vlan '4'
+ option ports '0t 3'
+ option vid '4'
+
+config switch_vlan
+ option device 'switch0'
+ option vlan '2'
+ option ports '5 6'
+ option vid '2'
+
+config switch_vlan
+ option device 'switch0'
+ option vlan '5'
+ option ports '0t 2'
+ option vid '5'
+
+config interface 'loopback'
+ option ifname 'lo'
+ option proto 'static'
+ option ipaddr '127.0.0.1'
+ option netmask '255.0.0.0'
+
+config interface
+ option ifname 'eth1.1'
+ option proto 'static'
+
+config interface
+ option ifname 'eth1.3'
+ option proto 'static'
+
+config interface 'lan3'
+ option ifname 'eth1.4'
+ option proto 'static'
+
+config interface 'lan4'
+ option ifname 'eth1.5'
+ option proto 'static'
+
+config interface 'wan'
+ option ifname 'eth0'
+ option type 'bridge'
+ option proto 'static'
+ option ipaddr '192.168.1.1'
+ option netmask '255.255.255.0'
+ option gateway '192.168.1.1'
+ option broadcast '192.168.1.255'
+

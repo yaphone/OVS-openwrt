@@ -1,0 +1,28 @@
+config wifi-device  radio0
+ option type     mac80211
+ option channel  11
+ option hwmode 11ng
+ option path 'platform/qca955x_wmac'
+ list ht_capab LDPC
+ list ht_capab SHORT-GI-20
+ list ht_capab SHORT-GI-40
+ list ht_capab TX-STBC
+ list ht_capab RX-STBC1
+ list ht_capab DSSS_CCK-40
+ option htmode HT20
+ # REMOVE THIS LINE TO ENABLE WIFI:
+ # option disabled 1
+
+config wifi-iface
+ option device   radio0
+ # option network  lan
+ option mode     ap
+ option ssid     OpenWrt-13-lan
+ option encryption none
+
+config wifi-iface
+ option device   radio0
+ option network  wan
+ option mode     ap
+ option ssid     OpenWrt-13-wan
+ option encryption none
